@@ -7,11 +7,16 @@ Este proyecto implementa un smart contract para una subasta en la blockchain de 
 El estado del contrato se gestiona a través de varias variables clave:
 
   address public beneficiario: Almacena la dirección de la persona que vende el artículo y que, por tanto, recibirá los fondos de la oferta ganadora.
-    uint256 public fechaFinalizacion: Guarda la fecha y hora exactas (en formato timestamp de Unix) en que termina la subasta.
-    address public mayorOferente y uint256 public mayorOferta: Llevan un registro público de quién es el postor con la oferta más alta y cuál es el monto de dicha oferta.
-    mapping(address => uint256) public depositos: Funciona como una base de datos o libro contable interno. Asocia la dirección de cada participante con la cantidad total de Ether que ha depositado en el contrato. Es la pieza central para gestionar los reembolsos de forma segura y eficiente.
-    bool public subastaFinalizada: Una variable booleana (true/false) que actúa como un interruptor. Permite controlar qué acciones están permitidas según si la subasta está activa o ya ha concluido.
-    Ownable de OpenZeppelin: Se importó este contrato estándar para gestionar de forma segura la propiedad del contrato. El owner (quien despliega el contrato) es el único que puede recibir las comisiones generadas.
+    
+  uint256 public fechaFinalizacion: Guarda la fecha y hora exactas (en formato timestamp de Unix) en que termina la subasta.
+    
+  address public mayorOferente y uint256 public mayorOferta: Llevan un registro público de quién es el postor con la oferta más alta y cuál es el monto de dicha oferta.
+    
+  mapping(address => uint256) public depositos: Funciona como una base de datos o libro contable interno. Asocia la dirección de cada participante con la cantidad total de Ether que ha depositado en el contrato. Es la pieza central para gestionar los reembolsos de forma segura y eficiente.
+    
+  bool public subastaFinalizada: Una variable booleana (true/false) que actúa como un interruptor. Permite controlar qué acciones están permitidas según si la subasta está activa o ya ha concluido.
+    
+  Ownable de OpenZeppelin: Se importó este contrato estándar para gestionar de forma segura la propiedad del contrato. El owner (quien despliega el contrato) es el único que puede recibir las comisiones generadas.
 
 #Lógica de Funcionamiento (Paso a Paso)
 
